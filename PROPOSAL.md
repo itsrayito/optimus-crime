@@ -2,7 +2,7 @@
 Optimus-Crime
 
 # Project Summary
-Users alike will be able to create an account in order to comment on true crime stories posted by other users.
+Users alike will be able to create an account in order to comment on posts regarding actual crimes that have happened around them.
 
 # Developer
 Rayito Aguirre
@@ -17,12 +17,13 @@ Other:
 
 # APIs
 - Google Fonts
-- 
+- Federal Bureau of Investigation Crime Data Explorer
 
 # MVP (Minimum Viable Product)
 - Blog style application where users can create an account
 - The user will be able to comment on other posts
-- This application will be about true crime stories
+- This application will be about real crime events
+- 
 
 # Stretch Goals
 - The user will be able to upload photos.
