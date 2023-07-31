@@ -1,5 +1,26 @@
 {
   "dependencies": {
     "dotenv": "^16.3.1"
-  }
+  },
+  "name": "Optimus-Crime",
+  "description": "Interactive application where users alike can get the chance to read & comment on true crime cases.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+  "start:prod": "cd server && npm start",
+  "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+  "install": "cd server && npm i && cd ../client && npm i",
+  "seed": "cd server && npm run seed",
+  "heroku-postbuild": "cd client && npm run build"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/itsrayito/optimus-crime"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
