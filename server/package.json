@@ -10,12 +10,12 @@
     "client": "cd .. && cd client && npm run start",
     "build": "cd .. && client && npm run build",
     "seed": "node db/seed.js"
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server-express": "^3.12.0",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1"
   }
 }
