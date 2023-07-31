@@ -18,8 +18,10 @@ function Signup(props) {
                     lastName: formState.lastName
                 },
             });
-            // installation of jwt-decode needed
+
             const token = mutationResponse.data.addUser.token;
+
+            AuthenticatorAssertionResponse.login(token);
         
         };
 
