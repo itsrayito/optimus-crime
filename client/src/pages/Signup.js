@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { ADD_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/react-hooks";
-
 import Auth from "../utils/auth";
 
 function Signup(props) {
-    const [formState, setFormState] = useState(
-        { email: '', password: ''});
+    const [formState, setFormState] = useState({ email: '', password: ''});
         const [addUser] = useMutation(ADD_USER);
 
         // submit event listener
@@ -22,9 +20,8 @@ function Signup(props) {
             });
 
             const token = mutationResponse.data.addUser.token;
-
-            AuthenticatorAssertionResponse.login(token);
-        
+            // this will create Auth.js in utils
+            Auth.login(token);
         };
 
         const handleChange = (event) => {
