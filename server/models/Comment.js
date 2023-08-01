@@ -5,7 +5,7 @@ const commentSchema = new Schema(
     {
         commentText: {
             type: String,
-            minlength: 1,
+            required: true,
             maxlength: 280
         },
         createdAt: {
@@ -24,4 +24,4 @@ const commentSchema = new Schema(
 const Comment = model('Comment', commentSchema);
 
 
-module.exports = Comment;
+module.exports = commentSchema;
