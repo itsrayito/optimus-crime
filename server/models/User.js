@@ -32,6 +32,12 @@ const UserSchema = new Schema(
                 type: Schema.Types.ObjectId,
                 ref: 'User'
             }
+        ],
+        case: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Case'
+            }
         ]
     },
     {

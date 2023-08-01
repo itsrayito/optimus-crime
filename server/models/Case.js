@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
+const mediaSchema = require('./Media');
 const dateFormat = require('../utils/dateFormat');
 
 const CaseSchema = new Schema({
@@ -25,7 +26,7 @@ const CaseSchema = new Schema({
         required: true,
         default: 'Unsolved'
     },
-    username: {
+    caseAuthor: {
         type: String,
         required: true
     },
@@ -34,6 +35,7 @@ const CaseSchema = new Schema({
         default: Date.now,
         get: timestamp => dateFormat(timestamp)
     },
+    media: [mediaSchema],
     comments: [commentSchema]
 },
 {
