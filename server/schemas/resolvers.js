@@ -2,7 +2,15 @@ const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
-    Query: {},
+    Query: {
+        me: async (parent, args) => {
+            const userData = await User.findOne({})
+            .select('-__v -password')
+            // .populate('friends')
+
+            return userData;
+        }
+    },
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
