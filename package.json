@@ -6,7 +6,7 @@
   "name": "Optimus-Crime",
   "description": "Interactive application where users alike can get the chance to read & comment on true crime cases.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/server.js",
   "devDependencies": {
     "concurrently": "^8.2.0"
   },

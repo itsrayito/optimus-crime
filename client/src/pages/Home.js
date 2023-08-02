@@ -12,7 +12,11 @@ const Home = () => {
         <main className="main_wrapper">
             <div>
                 <div>
-                    The CaseList: <CaseList />
+                    {loading ? (
+                        <div>Loading..</div>
+                    ) : (
+                        <CaseList cases={cases}/>
+                    )}
                 </div>
             </div>
         </main>
