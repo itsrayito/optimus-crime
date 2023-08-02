@@ -17,15 +17,18 @@ const SingleCase = (props) => {
     }
     return (
         <div>
-            <div>
-                <p className="card-header">
-                    <span>Username</span> thought on createdAt
-                </p>
-                <div className="card-body">
-                    <p>Case text</p>
-                </div>
-            </div>
+      <div className="card mb-3">
+        <p className="card-header">
+            <span style={{ fontWeight: 700 }} className="text-light">
+                {cases.username}
+            </span>{' '}
+            case on {cases.createdAt}
+        </p>
+        <div className="card-body">
+            <p>{cases.caseText}</p>
         </div>
+    </div>
+</div>
     );
 };
 
