@@ -11,11 +11,12 @@ const typeDefs = gql`
         caseAuthor: String
         createdAt: String
         username: String
+        comments: [Comment]
     }
 
     type Comment {
         _id: ID
-        commentBody: String
+        commentText: String
         createdAt: String
         username: String
     }
@@ -24,6 +25,9 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
+        friendCount: Int
+        cases: [Case]
+        friends: [User]
         
     }
 
@@ -34,6 +38,8 @@ const typeDefs = gql`
         case(_id: ID!): Case
         }
     `;
+
+    
    // // incomplete
    // const typeDefs = gql`
    // type User {

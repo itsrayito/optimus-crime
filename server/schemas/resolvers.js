@@ -3,12 +3,32 @@
 // const { signToken } = require('../utils/auth');
 const { User, Case } = require('../models');
 
-const resolver = {
+const resolvers = {
     Query: {
+        // this will get all cases
         cases: async (parent, { username }) => {
             const params = username ? { username } : {};
             return Case.find(params).sort({ createdAt: -1 });
+        },
+        // this is going to get one case by ID
+        case: async (parent, { _id }) => {
+            return Case.findOne({ _id });
+        },
+        // this gets all users
+        users: async () => {
+            return User.find()
+            .select('-__v -password')
+            .populate('friends')
+            .populate('cases');
+        },
+        // this will get the user by username
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+            .select('-__v -password')
+            .populate('friends')
+            .populate('cases');
         }
+        
     }
 };
 
