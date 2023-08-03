@@ -9,7 +9,7 @@ const CommentForm = () => {
 
     // event listeners
     const handleChange = (event) => {
-        if (event.target.value.length <=500) {
+        if (event.target.value.length <=10000) {
             setText(event.target.value);
             setCharacterCount(event.target.value.length);
         }
@@ -34,8 +34,9 @@ const CommentForm = () => {
 
     return (
         <div>
-           <p className={`m-0 ${characterCount === 500 ? "text-error" : ""}`}>
-            Character Count: {characterCount}/500
+           <p className={`m-0 ${characterCount === 10000 ? "text-error" : ""}`}>
+            Character Count: {characterCount}/10000
+            {error && <span className="ml-2">Something is wrong!</span>}
             </p>{" "}
             <form
             className="flex-row justify-center justify-space-between-md align-stretch"
