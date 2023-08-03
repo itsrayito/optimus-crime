@@ -1,6 +1,16 @@
 // imports
 // const { AuthenticationError } = require('apollo-server-express');
 // const { signToken } = require('../utils/auth');
+const { User, Case } = require('../models');
+
+const resolver = {
+    Query: {
+        cases: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Case.find(params).sort({ createdAt: -1 });
+        }
+    }
+};
 
 // const resolvers = {
     // Query: {

@@ -14,8 +14,8 @@ const typeDefs = gql`
     }
 
     type Query {
-        cases: [Case]
-    }
+        cases(username: String): [Case]
+        }
     `;
    // // incomplete
    // const typeDefs = gql`
