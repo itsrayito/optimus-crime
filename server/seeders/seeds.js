@@ -56,18 +56,23 @@ db.once('open', async () => {
 
         createdCase.push(createdCase);
     }
-       // const caseData = [];
-       
-       // for (let i = 0; i < 5; i++) {
-        //const caseTitle = faker.name.findName();
-        // const caseDescription = faker.lorem.paragraphs();
-        // const caseStartDate = faker.date.past();
-        // const caseStatus = "Unsolved";
-        // const caseAuthor = faker.name.findName();
 
-       // caseData.push({ caseTitle, caseDescription, caseStartDate, caseStatus, caseAuthor });
-       // }
-       // await Case.collection.insertMany(caseData);
+    // this is going to create comments
+    for (let i = 0; i < 100; i += 1) {
+        const commentText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+
+        const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+        const { username } = createdUsers.ops[randomUserIndex];
+
+        const randomCaseIndex = Math.floor(Math.random() * createdCases.length);
+        const { _id: caseId } = createdCases[randomCaseIndex];
+
+        await Case.updateOne(
+            { _id: caseId },
+            { $push: { comments: { commentText, username } } },
+            { runValidators: true }
+        );
+    }
 
     console.log('all done.');
     process.exit(0);

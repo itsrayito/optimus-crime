@@ -13,6 +13,13 @@ const typeDefs = gql`
         username: String
     }
 
+    type Comment {
+        _id: ID
+        commentBody: String
+        createdAt: String
+        username: String
+    }
+
     type User {
         _id: ID
         username: String
@@ -23,7 +30,7 @@ const typeDefs = gql`
     type Query {
         users: [User]
         user(username: String!): User
-        cases: [Case]
+        cases:(username: String): [Case]
         case(_id: ID!): Case
         }
     `;
