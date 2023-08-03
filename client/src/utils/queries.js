@@ -11,9 +11,17 @@ query comments($username: String) {
 }
 `;
 
-export const QUERY_ME = gql`
+export const QUERY_COMMENT = gql`
+    query comment($id: ID!) {
+        comment(_id: $id) {
+            _id
+            commentText
+            createdAt
+            username
+        }
+    }
 
-`
+`;
 
 export const QUERY_CASES = gql`
 {
@@ -44,4 +52,20 @@ query case($id: ID!) {
               }
            }
         }
+`;
+
+export const QUERY_ME =gql`
+{
+    me {
+        _id
+        username
+        email
+        commentCount
+        comments {
+            _id
+            commentText
+            createdAt
+        }
+    }
+}
 `;
