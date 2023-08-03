@@ -23,7 +23,7 @@ const CommentForm = () => {
             const { me } = cache.readQuery({ query: QUERY_ME });
             cache.writeQuery({
                 query: QUERY_ME,
-                data: { me: { ...me, thoughts: [...me.comments, addComment] } }
+                data: { me: { ...me, comments: [...me.comments, addComment] } }
             });
         }
     });
