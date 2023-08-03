@@ -15,7 +15,8 @@ const app = express(); // this will represent express server
 // this will create a new Apollo server and pass in our schema data
 const server = new ApolloServer({
     typeDefs,
-    resolvers
+    resolvers,
+    context: authMiddleware
 });
 
 // this will integrate the Apollo server with express app. as middleware

@@ -11,6 +11,7 @@ const typeDefs = gql`
         caseAuthor: String
         createdAt: String
         username: String
+        commentCount: Int
         comments: [Comment]
     }
 
@@ -31,11 +32,25 @@ const typeDefs = gql`
         
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Query {
+        me: User
         users: [User]
         user(username: String!): User
         cases:(username: String): [Case]
         case(_id: ID!): Case
+        }
+
+        type Mutation {
+            login(email: String!, password: String!): Auth
+            addUser(username: String!, email: String!, password: String!): Auth
+            addCase(caseTitle: String!, caseDescription: String!, caseStartDate: String!, caseStatus: String!): Case
+            addComment(caseId: ID!, commentText: String!): Case
+            addFriend(friendId: ID!): User
         }
     `;
 
