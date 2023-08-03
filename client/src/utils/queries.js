@@ -11,6 +11,10 @@ query comments($username: String) {
 }
 `;
 
+export const QUERY_ME = gql`
+
+`
+
 export const QUERY_CASES = gql`
 {
     cases {
