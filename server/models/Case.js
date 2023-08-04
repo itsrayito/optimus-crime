@@ -10,15 +10,23 @@ const CaseSchema = new Schema({
         maxlength: 120
     },
 
+    caseSummary: {
+        type: String,
+        required: 'The case must have a summary',
+        minlength: 1,
+        maxlength: 500
+    },
+
     caseDescription: {
         type: String,
-        required: 'This case needs to have a story',
+        required: 'The case must have a description',
         minlength: 1,
         maxlength: 500
     },
     caseStartDate: {
         type: Date,
         required: true,
+        get: timestamp => dateFormat(timestamp)
     },
     caseStatus: {
         type: String,

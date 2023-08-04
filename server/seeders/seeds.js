@@ -40,14 +40,15 @@ db.once('open', async () => {
 
     for (let i = 0; i < 5; i++) {
         const caseTitle = faker.name.findName();
-        const caseDescription = faker.lorem.paragraphs();
+        const caseSummary = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+        const caseDescription = faker.lorem.words(Math.round(Math.random() * 20) + 1);
         const caseStartDate = faker.date.past();
         const caseStatus = "Unsolved";
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-        const createdCase = await Case.create({ caseTitle, caseDescription, caseStartDate, caseStatus, username });
+        const createdCase = await Case.create({ caseTitle, caseSummary, caseDescription, caseStartDate, caseStatus, username });
 
         const updatedUser = await User.updateOne(
             { _id: userId },

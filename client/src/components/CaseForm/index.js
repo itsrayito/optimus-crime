@@ -4,8 +4,8 @@ import { ADD_CASE } from '../../utils/mutations';
 import { QUERY_CASES } from '../../utils/queries';
 
 const CaseForm = () => {
-    const [formState, setFormState] = useState({ caseTitle: '', caseDescription: '', caseStatus: 'Unsolved',
-caseStartDate: '' });
+    const [formState, setFormState] = useState({ caseTitle: '', caseSummary: '', caseDescription: '', caseStatus: 
+    'Unsolved', caseStartDate: '' });
 const [addCase, { error }] = useMutation(ADD_CASE, {
     update(cache, { data: { addCase } }) {
         const { cases } = cache.readQuery({ query: QUERY_CASES });
@@ -51,6 +51,16 @@ return (
                 value={formState.caseTitle}
                 onChange={handleChange}
                 />
+            </div>
+            <div>
+                <textarea
+                placeholder="Enter a case description"
+                name="caseSummary"
+                id="caseSummary"
+                value={formState.caseSummary}
+                onChange={handleChange}
+                >
+                </textarea>
             </div>
             <div>
                 <textarea

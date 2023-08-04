@@ -6,6 +6,7 @@ query cases($username: String) {
     cases(username: $username) {
         _id
         caseTitle
+        caseSummary
         caseDescription
         caseStatus
         caseStartDate

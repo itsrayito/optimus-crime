@@ -38,14 +38,13 @@ h1 {
 }
 
 a {
-  color: var(--black);
+  color: var(--darkred);
   text-decoration: none;
 }
 
 nav a:hover {
   font-weight: bold;
-  color: black;
-  background-image: linear-gradient(to right, rgba(250,0,0,0), rgba(180,20,20,.2), rgba(250,0,0,0));
+  color: tan;
 }
 
 h3 {
@@ -53,8 +52,13 @@ h3 {
   font-weight: bold;
 }
 
-h3 a:hover {
+h3 a{
   color: var(--darkred);
+}
+
+h3 a:hover, p a:hover {
+  color: red;
+  font-weight: bold;
 }
 
 p {
@@ -63,6 +67,7 @@ p {
 
 p a {
   display: inline;
+  color: var(--darkred)
 }
 
 .title--large {
@@ -79,6 +84,13 @@ p a {
 
 .english-font {
   font-family: 'Cinzel', serif;
+}
+
+.case-summary {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .double-border{

@@ -6,6 +6,7 @@ mutation addCase($caseTitle: String!, $caseDescription: String!, $caseStatus: St
     addCase(caseTitle: $caseTitle, caseDescription: $caseDescription, caseStatus: $caseStatus, caseStartDate: $caseStartDate) {
         _id
         caseTitle
+        caseSummary
         caseDescription
         caseStatus
         caseStartDate
