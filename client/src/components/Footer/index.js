@@ -1,6 +1,6 @@
 import React from 'react';
 
-<footer className="bg-dark p-3 footer-1 text-center d-flex justify-content-between">
+<footer className="bg-dark p-3 footer text-center d-flex justify-content-between">
     <div className="">
         <a href="#" className="px-2">Privacy Policy</a>
         <a href="#" className="px-2">Terms of Use</a>

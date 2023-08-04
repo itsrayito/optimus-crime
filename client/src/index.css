@@ -11,6 +11,12 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  height: 100%
+  /* position: relative; */
 }
 
 body {
@@ -45,6 +51,11 @@ a {
 nav a:hover {
   font-weight: bold;
   color: tan;
+}
+
+h2 {
+  color: var(--darkred);
+  font-weight: bold;
 }
 
 h3 {
@@ -112,10 +123,26 @@ p a {
   transform: scale(1.225, 1.225);
 }
 
+.footer{
+  position: absolute;
+  bottom: 0;
+  height: 3rem;
+  width: 99%;
+}
+
 footer a {
   color: white;
 }
 
 footer a:hover{
   color: var(--darkred);
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-area {
+  padding-bottom: 3rem;
 }

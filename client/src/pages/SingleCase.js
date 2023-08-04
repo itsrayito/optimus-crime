@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { QUERY_CASE } from "../utils/queries";
 import CommentList from '../components/CommentList';
+import CommentForm from '../components/CommentForm';
+import Auth from '../utils/auth';
 
 const SingleCase = (props) => {
     const { id: caseId } = useParams();
@@ -18,21 +20,22 @@ const SingleCase = (props) => {
     }
     return (
         <div>
-      <div className="card mb-3">
-        <p className="card-header">
-            <span style={{ fontWeight: 700 }} className="text-light">
-                {cases.username}
-            </span>{' '}
-            case on {cases.createdAt}
-        </p>
-        <div className="card-body">
-            <p>Case Title: {cases.caseTitle}</p>
-            <p>Case Description: {cases.caseDescription}</p>
-            <p>Case Status: {cases.caseStatus}</p>
-            <p>Case Start Date: {cases.caseStartDate}</p>
+      <div class="m-2">
+        <h2 className="english-font text-center">{cases.caseTitle}</h2>
+        <div className="text-center">
+            <p>Case Start Date: <span><strong>{cases.caseStartDate}</strong></span></p>
+            <p>Case Status: <span><strong>{cases.caseStatus}</strong></span></p>
+            <p>Added to CCC on: <span><strong>{cases.createdAt}</strong></span> by <span><strong>{cases.username}
+            </strong></span></p>
+        </div>
+
+        <div>
+            <p></p>
+            <p><span><strong>The story</strong></span></p>
+            <p className="px-3">{cases.caseDescription}</p>
         </div>
     </div>
-
+    {Auth.loggedIn() && <CommentForm caseId={cases._id} />}
     {cases.commentCount > 0 && <CommentList comments={cases.comments} />}
 </div>
     );

@@ -3,7 +3,7 @@
     "dotenv": "^16.3.1",
     "if-env": "^1.0.4"
   },
-  "name": "Optimus-Crime",
+  "name": "optimus-crime",
   "description": "Interactive application where users alike can get the chance to read & comment on true crime cases.",
   "version": "1.0.0",
   "main": "server/server.js",
@@ -21,10 +21,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itsrayito/optimus-crime"
+    "url": "git+https://github.com/itsrayito/optimus-crime.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
-  }
-
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsrayito/optimus-crime/issues"
+  },
+  "homepage": "https://github.com/itsrayito/optimus-crime#readme"
+}
