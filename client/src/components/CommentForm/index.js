@@ -20,11 +20,11 @@ const CommentForm = () => {
             }
 
             // this will update me object's cache, appending new thought to the end of the array
-            const { me } = cache.readQuery({ query: QUERY_ME });
-            cache.writeQuery({
-                query: QUERY_ME,
-                data: { me: { ...me, comments: [...me.comments, addComment] } }
-            });
+            // const { me } = cache.readQuery({ query: QUERY_ME });
+            // cache.writeQuery({
+            //     query: QUERY_ME,
+            //    data: { me: { ...me, comments: [...me.comments, addComment] } }
+            // });
         }
     });
 

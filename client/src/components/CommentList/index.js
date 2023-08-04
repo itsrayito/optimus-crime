@@ -7,7 +7,7 @@ const CommentList = ({ comments, title }) => {
     }
     return (
         <div>
-            <h3>{title}</h3>
+            <h3>Comments</h3>
             {comments &&
             comments.map(comments => (
                 <div key={comments._id} className="">
