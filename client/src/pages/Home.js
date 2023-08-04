@@ -15,11 +15,7 @@ const Home = () => {
     return (
         <main>
             <div>
-                {loggedIn && (
-                    <div>
-                        <CaseForm/>
-                </div>
-                )}
+                
                 <div>
                     {loading ? (
                         <div>Loading...</div>

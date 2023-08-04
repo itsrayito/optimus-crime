@@ -57,8 +57,8 @@ return (
                 name="caseStatus"
                 id="caseStatus"
                 onChange={handleChange}>
-                    <option selected value="unsolved">Unsolved</option>
-                    <option value="solved">Solved</option>
+                    <option selected value="Unsolved">Unsolved</option>
+                    <option value="Solved">Solved</option>
                 </select>
             </div>
             <div>
