@@ -6,6 +6,7 @@
   --black--acc: #222;
   --gray: #eee;
   --gray-1: #ededed;
+  --darkred: #bb1919;
 }
 
 * {
@@ -15,7 +16,7 @@
 body {
   font-size: 1.1rem;
   background: var(--preview-bg);
-  font-family: var(--font);
+  font-family: 'Roboto Slab', serif;
   color: var(--black);
   background: papayawhip;
   padding: 4rem 2rem;
@@ -29,25 +30,31 @@ body {
 }
 
 h1 {
-  font: 50px/1 "Playfair Display SC";
+  font: 50px/1 "Broadway";
   text-align: center;
   @media (min-width: 700px) {
-    font: 70px/1 "Playfair Display SC";
+    font: 70px/1 "Broadway";
   }
 }
 
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-weight: bold;
+  color: black;
+  background-image: linear-gradient(to right, rgba(250,0,0,0), rgba(180,20,20,.2), rgba(250,0,0,0));
+}
+
 h3 {
-  font: italic 20px var(--font-title);
-  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
-h4 {
-  font: 20px/1.2 var(--font-title);
-}
-
-h5 {
-  font: 700 20px/1 var(--font);
-  transition: 0.3s ease;
+h3 a:hover {
+  color: var(--darkred);
 }
 
 p {
@@ -68,6 +75,10 @@ p a {
     font-size: 42px;
     margin: 0;
   }
+}
+
+.english-font {
+  font-family: 'Cinzel', serif;
 }
 
 .double-border{
