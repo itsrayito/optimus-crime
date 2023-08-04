@@ -39,7 +39,7 @@ const handleFormSubmit = async event => {
     }
 }
 return (
-    <div>
+        <div className="py-3">
         <h3>Enter case information:</h3>
         <form onSubmit={handleFormSubmit}>
             <div class="form-floating mb-3">
