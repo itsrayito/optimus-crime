@@ -36,9 +36,8 @@ db.once('open', async () => {
       }
       
       // this will create case data
-      const caseData = [];
-
-    for (let i = 0; i < 5; i++) {
+      let createdCases = [];
+      for (let i = 0; i < 5; i++) {
         const caseTitle = faker.name.findName();
         const caseSummary = faker.lorem.words(Math.round(Math.random() * 20) + 1);
         const caseDescription = faker.lorem.words(Math.round(Math.random() * 20) + 1);
@@ -55,7 +54,7 @@ db.once('open', async () => {
             { $push: { cases: createdCase._id } }
         );
 
-        createdCase.push(createdCase);
+        createdCases.push(createdCase);
     }
 
     // this is going to create comments

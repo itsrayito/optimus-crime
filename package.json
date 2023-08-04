@@ -15,7 +15,7 @@
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "cd server && npm start",
     "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "npm init -y && npm install if-env && npm install -D concurrently && cd client && npm i && npm i apollo-boost graphql-tag @apollo/react-hooks react-router-dom jwt-decode && cd ../server && npm i && npm i apollo-server-express jsonwebtoken",
+    "install": "npm init -y && npm install if-env && npm install -D concurrently && cd client && npm i && npm i apollo-boost graphql graphql-tag @apollo/react-hooks react-router-dom jwt-decode && cd ../server && npm i && npm i apollo-server-express jsonwebtoken",
     "seed": "cd server && npm run seed",
     "heroku-postbuild": "cd client && npm run build"
   },

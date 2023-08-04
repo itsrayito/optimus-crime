@@ -1,10 +1,10 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { QUERY_CASES } from "../utils/queries"
+import { QUERY_CASES } from "../utils/queries";
 import CaseForm from '../components/CaseForm';
 import Auth from '../utils/auth';
 
-import CaseList from '../components/CaseList';
+import CaseList from "../components/CaseList";
 
 const Home = () => {
 

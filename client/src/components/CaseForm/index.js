@@ -34,6 +34,8 @@ const handleFormSubmit = async event => {
         const { data } = await addCase({
             variables: { ...formState }
         });
+        setFormState({ caseTitle: '', caseSummary: '', caseDescription: '', caseStatus: 'Unsolved',
+    caseStartDate: '' });
     } catch(e) {
         console.error(e);
     }
@@ -57,7 +59,7 @@ return (
             <div className="form-floating mb-3">
                 <textarea
                 className="form-control"
-                placeholder="Enter a case description"
+                placeholder="Enter a case summary"
                 name="caseSummary"
                 id="caseSummary"
                 value={formState.caseSummary}

@@ -26,7 +26,7 @@ const mediaSchema = new Schema(
             type: String,
             required: 'There has to be a URL for the media item',
             unique: true,
-            match: [/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/, 'This must be a valid url']
+            match: [/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/, 'Must be a valid url']
         }
     },
     {

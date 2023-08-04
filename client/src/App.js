@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // this will import Apollo hooks & modules
@@ -33,7 +33,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider Client={client}>
+    <ApolloProvider client={client}>
       <Router>
         <div class="container content-area">
           <Header />
@@ -42,8 +42,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/case:id" component={SingleCase} />
-              {/* <Route exact path="/profile/:username?" component={Profile} /> */}
+              <Route exact path="/case/:id" component={SingleCase} />
+              <Route exact path="/profile/:username?" component={Profile} />
               <Route exact path="/caseform" component={CaseForm} />
               <Route component={NoMatch} />
             </Switch>

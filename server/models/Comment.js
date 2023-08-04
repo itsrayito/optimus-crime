@@ -1,4 +1,4 @@
-const { Schema, model, Schema } = require('mongoose');
+const { schema, model, Schema } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
@@ -19,9 +19,5 @@ const commentSchema = new Schema(
         }
     }
 );
-
-// this will create the Comment model using the commentSchema
-const Comment = model('Comment', commentSchema);
-
 
 module.exports = commentSchema;

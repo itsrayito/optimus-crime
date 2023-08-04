@@ -26,7 +26,7 @@ const CaseList = ({ cases }) => {
                                 <p className="case-summary">Case Summary: {cases.caseSummary}</p>
                                 <p></p>
                                 <p className="">
-                                    <Link tp={`/case/${cases._id}`}>
+                                    <Link to={`/case/${cases._id}`}>
                                     Comments: {cases.commentCount} || Click to{' '}
                                     {cases.commentCount ? 'see' : 'start'} the discussion!
                                     </Link>

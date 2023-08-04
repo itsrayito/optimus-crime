@@ -1,5 +1,7 @@
 import React from 'react';
 
+const Footer = () => {
+    return (
 <footer className="bg-dark p-3 footer text-center d-flex justify-content-between">
     <div className="">
         <a href="#" className="px-2">Privacy Policy</a>
@@ -9,7 +11,8 @@ import React from 'react';
         <a href="https://github.com/optimus-prime"><i className="fab fa-github px-2"></i></a>
     </div>
 
-    
-</footer>
+    </footer>
+   );
+};
 
 export default Footer;
