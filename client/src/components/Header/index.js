@@ -14,6 +14,7 @@ const Header = () => {
                 <Link to="/" className="text-decoration-none text-body">
                     <h1>Optimus Crime</h1>
                 </Link>
+                <p>The place to read about true crime stories all across the globe & get the chance to discuss about it.</p>
                 <div className="double-border"></div>
                 <div className="d-flex flex-row justify-content-between">
                     <span className="english-font px-3 py-2">August 4, 2023</span>
