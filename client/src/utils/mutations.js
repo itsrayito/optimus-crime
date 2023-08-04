@@ -2,8 +2,8 @@ import gql from "graphql-tag";
 
 
 export const ADD_CASE = gql`
-mutation addCase($caseTitle: String!, $caseDescription: String!, $caseStatus: String!, $caseStartDate: String!) {
-    addCase(caseTitle: $caseTitle, caseDescription: $caseDescription, caseStatus: $caseStatus, caseStartDate: $caseStartDate) {
+mutation addCase($caseTitle: String!, $caseSummary: String!, $caseDescription: String!, $caseStatus: String!, $caseStartDate: String!) {
+    addCase(caseTitle: $caseTitle, caseSummary: $caseSummary, caseDescription: $caseDescription, caseStatus: $caseStatus, caseStartDate: $caseStartDate) {
         _id
         caseTitle
         caseSummary
@@ -21,13 +21,17 @@ mutation addCase($caseTitle: String!, $caseDescription: String!, $caseStatus: St
 
 `;
 export const ADD_COMMENT = gql`
-mutation addComment($commentText: String!) {
-    addComment(commentText: $commentText) {
+mutation addComment($caseId: ID!, $commentText: String!) {
+    addComment(caseId: $caseId, commentText: $commentText) {
         _id
+        commentCount
+        comments {
+            _id
         commentText
         createdAt
         username
-    }
+     }
+  }
 }
 `;
 
