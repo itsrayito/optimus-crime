@@ -42,8 +42,9 @@ return (
     <div>
         <h3>Enter case information:</h3>
         <form onSubmit={handleFormSubmit}>
-            <div>
+            <div class="form-floating mb-3">
                 <input
+                className="form-control"
                 placeholder="Enter a case title"
                 name='caseTitle'
                 type='text'
@@ -51,9 +52,11 @@ return (
                 value={formState.caseTitle}
                 onChange={handleChange}
                 />
+                <label for="caseTitle">Enter a title for the case</label>
             </div>
-            <div>
+            <div className="form-floating mb-3">
                 <textarea
+                className="form-control"
                 placeholder="Enter a case description"
                 name="caseSummary"
                 id="caseSummary"
@@ -61,42 +64,48 @@ return (
                 onChange={handleChange}
                 >
                 </textarea>
+                <label for="caseSummary">Enter the case summary</label>
             </div>
-            <div>
+            <div className="form-floating mb-3">
                 <textarea
+                className="form-control"
                 placeholder="Enter a case description"
                 name="caseDescription"
-                id="caseDescription"
                 value={formState.caseDescription}
                 onChange={handleChange}
-                >
-                </textarea>
+                    >
+                    </textarea>
+                    <label for="caseDescription">Enter the description.</label>
+                    </div>
+                    <div className="mb-3">
+                        <select
+                        className="form-select"
+                        aria-label=".form-select-1"
+                        name="caseStatus"
+                        id="caseStatus"
+                        onChange={handleChange}>
+                        <option selected>Choose a status:</option>
+                        <option value="Unsolved">Unsolved</option>
+                        <option value="Solved">Solved</option>
+                        </select>
+                    </div>
+                    <div className="mb-3">
+                        <input
+                        className="form-control"
+                        name="caseStartDate"
+                        type="date"
+                        id="caseStartDate"
+                        value={formState.caseStartDate}
+                        onChange={handleChange}
+                        />
+                    </div>
+                    <div className="d-grid ga-2 d-md-flex justify-content-md-end py-2">
+                        <button className='btn btn-dark btn-primary px-4' type='submit'>
+                            Submit
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <select
-                name="caseStatus"
-                id="caseStatus"
-                onChange={handleChange}>
-                    <option selected value="Unsolved">Unsolved</option>
-                    <option value="Solved">Solved</option>
-                </select>
-            </div>
-            <div>
-                <input
-                name="caseStartDate"
-                type="date"
-                id="caseStartDate"
-                value={formState.caseStartDate}
-                onChange={handleChange}
-                />
-            </div>
-            <div>
-                <button type="submit">
-                    Submit
-                </button>
-            </div>
-        </form>
-    </div>
     );
 };
 
