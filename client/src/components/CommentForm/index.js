@@ -16,7 +16,7 @@ const CommentForm = ({ caseId }) => {
 
         const handleFormSubmit = async event => {
             event.preventDefault();
-        }
+        
             try {
                 await addComment({
                     variables: {commentText, caseId}
