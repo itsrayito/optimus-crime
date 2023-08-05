@@ -15,7 +15,6 @@ const Home = () => {
     return (
         <main>
             <div>
-                
                 <div>
                     {loading ? (
                         <div>Loading...</div>

@@ -8,6 +8,7 @@
   "version": "1.0.0",
   "main": "server/server.js",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "concurrently": "^8.2.0"
   },
   "scripts": {
