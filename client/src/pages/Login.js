@@ -8,7 +8,7 @@ const Login = (props) => {
 
     const [login, { error }] = useMutation(LOGIN_USER);
 
-    // this will update state based on form inout changes
+    // this will update state based on form input changes
     const handleChange = (event) => {
         const { name, value } = event.target;
 
@@ -69,6 +69,7 @@ const Login = (props) => {
                             />
                             <label for="password" class="form-label">Password:</label>
                             </div>
+
                             <div className="d-grid g-2 d-md-flex justify-content-end pt-3">
                                 <button className='btn btn-dark btn-primary px-4' type='submit'>
                                     Submit

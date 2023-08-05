@@ -19,7 +19,7 @@ const Home = () => {
                     {loading ? (
                         <div>Loading...</div>
                     ) : (
-                        <CaseList cases={cases}/>
+                   <CaseList cases={cases}/>
                     )}
                 </div>
             </div>

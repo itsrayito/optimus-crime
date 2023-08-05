@@ -4,6 +4,7 @@ const { gql } = require('apollo-server-express');
 // typeDefs
 const typeDefs = gql`
     scalar DateTime
+    
     type Case {
         _id: ID
         caseTitle: String

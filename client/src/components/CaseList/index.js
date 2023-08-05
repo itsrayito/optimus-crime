@@ -5,6 +5,7 @@ const CaseList = ({ cases }) => {
     if (!cases.length) {
         return <h3>No cases to show</h3>;
     }
+    
     return (
         <div>
             <div className="bg-dark">

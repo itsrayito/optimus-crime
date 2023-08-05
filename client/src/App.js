@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // this will import Apollo hooks & modules
 import { ApolloProvider } from '@apollo/react-hooks';
-import { ApolloClient } from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 
 // this will import components
 import Header from './components/Header';
@@ -43,7 +43,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/case/:id" component={SingleCase} />
-              <Route exact path="/profile/:username?" component={Profile} />
+              {/* <Route exact path="/profile/:username?" component={Profile} /> */}
               <Route exact path="/caseform" component={CaseForm} />
               <Route component={NoMatch} />
             </Routes>
