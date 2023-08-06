@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@apollo/server": "^4.9.1",
     "apollo-server-express": "^3.12.0",
     "bcrypt": "^5.1.0",
     "faker": "^6.6.6",

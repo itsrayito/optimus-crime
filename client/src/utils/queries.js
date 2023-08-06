@@ -24,7 +24,7 @@ query cases($username: String) {
 `;
 
 export const QUERY_CASE = gql`
-query case($id: ID!){
+query case($id: ID!) {
     case(_id: $id) {
         _id
         caseTitle
