@@ -3,7 +3,7 @@ const path = require("path"); // this will import path to access file and direct
 const { authMiddleware } = require("./utils/auth");
 
 // this will import Apollo server
-const { ApolloServer } = require('@apollo/server');
+const { ApolloServer } = require("apollo-server-express");
 
 // this will import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');

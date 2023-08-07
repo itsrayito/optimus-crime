@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from "@apollo/client";
 import { ADD_CASE } from '../../utils/mutations';
 import { QUERY_CASES } from '../../utils/queries';
 

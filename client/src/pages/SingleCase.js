@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery } from "@apollo/client";
 import { QUERY_CASE } from "../utils/queries";
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';

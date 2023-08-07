@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "dotenv": "^16.3.1",
-    "graphql": "^16.7.1",
     "if-env": "^1.0.4"
   },
   "name": "optimus-crime",

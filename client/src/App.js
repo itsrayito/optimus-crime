@@ -2,8 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // this will import Apollo hooks & modules
-import { ApolloProvider } from '@apollo/react-hooks';
-import ApolloClient from 'apollo-boost';
+import { ApolloProvider,
+          InMemoryCache,
+          ApolloClient,
+          createHttpLink,
+        } from "@apollo/client";  
+import { setContext } from "@apollo/client/link/context"
 
 // this will import components
 import Header from './components/Header';
@@ -15,21 +19,26 @@ import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SingleCase from './pages/SingleCase';
 import Signup from './pages/Signup';
-import Profile from './pages/Profile';
 import CaseForm from './pages/CaseForm';
 
-const client = new ApolloClient({
-  request: operation => {
-    const token = localStorage.getItem('id_token');
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
 
-    operation.setContext({
-      headers: {
-        authorization: token ? `Bearer ${token}` : ''
-      }
-    });
-  },
-  uri: '/graphql'
-}); 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
