@@ -3,7 +3,7 @@ import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-const Login = () => {
+const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
 
     const [login, { error }] = useMutation(LOGIN_USER);
@@ -19,8 +19,9 @@ const Login = () => {
     };
 
     // the submit form
-    const handleFormSubmit = async event => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log(formState);
 
         try {
             const { data } = await login({

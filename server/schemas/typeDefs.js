@@ -5,7 +5,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     scalar DateTime
     
-    type Case {
+    type Case { 
         _id: ID
         caseTitle: String
         caseSummary: String
@@ -45,7 +45,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         user(username: String!): User
-        cases:(username: String): [Case]
+        cases(username: String): [Case]
         case(_id: ID!): Case
         }
 

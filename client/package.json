@@ -2,7 +2,7 @@
   "name": "optimus-crime",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3002",
   "dependencies": {
     "@apollo/client": "^3.7.17",
     "@apollo/react-hooks": "^4.0.0",
