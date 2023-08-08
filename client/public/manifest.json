@@ -1,7 +1,7 @@
 {
   "short_name": "optimus-crime",
   "name": "optimus-crime",
-  "start_url": "",
+  "start_url": "https://pacific-chamber-86935-a5798209b051.herokuapp.com/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
