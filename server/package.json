@@ -8,6 +8,7 @@
     "faker": "^6.6.6",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^9.0.1",
+    "mongodb": "^5.7.0",
     "mongoose": "^7.4.1",
     "mongoose-type-url": "^2.1.0",
     "nodemon": "^3.0.1"

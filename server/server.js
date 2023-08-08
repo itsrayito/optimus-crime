@@ -7,7 +7,7 @@ const { ApolloServer } = require("apollo-server-express"); // import apollo
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3002; // the local port
+const PORT = process.env.PORT || 3000; // the local port
 const app = express(); // this will represent express server
 const server = new ApolloServer({
     typeDefs,
