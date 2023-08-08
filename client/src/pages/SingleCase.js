@@ -6,7 +6,7 @@ import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import Auth from '../utils/auth';
 
-const SingleCase = (props) => {
+const SingleCase = () => {
     const { id: caseId } = useParams();
 
     const { loading, data } = useQuery(QUERY_CASE, {
