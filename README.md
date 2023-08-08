@@ -20,6 +20,7 @@ The user will have to either clone or fork this repository into their local mach
 - By typing `npm i`, the user will be able to install all dependencies on to their local machine.
 
 - # Screenshot
+![Alt text](client/public/optimus-crime.png)
 
 - # Technologies-Used
 - This project uses React for the front end.<br>
