@@ -15,10 +15,10 @@ import Footer from './components/Footer';
 
 // this imports pages
 import Home from './pages/Home';
-import Login from './pages/Login';
+import Login from "./pages/Login";
 import NoMatch from './pages/NoMatch';
 import SingleCase from './pages/SingleCase';
-import Signup from './pages/Signup';
+import Signup from "./pages/Signup";
 import CaseForm from './pages/CaseForm';
 
 const httpLink = createHttpLink({
@@ -44,17 +44,17 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div class="container content-area">
+        <div className="container content-area">
           <Header />
           <div>
             <Routes>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/case/:id" component={SingleCase} />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/case/:id" element={<SingleCase />} />
               {/* <Route exact path="/profile/:username?" component={Profile} /> */}
-              <Route exact path="/caseform" component={CaseForm} />
-              <Route component={NoMatch} />
+              <Route exact path="/caseform" element={<CaseForm />} />
+              <Route element={<NoMatch />} />
             </Routes>
           </div>
           <div>

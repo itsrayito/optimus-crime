@@ -4,7 +4,7 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
-    const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+    const [formState, setFormState] = useState({ username: '', email: '', password: '', });
 
     const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -21,12 +21,13 @@ const Signup = () => {
     // this will submit the form
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log(formState);
 
         // instead of using promises, use catch/try to deal with errors
         try {
             // this will execute the addUser mutation and pass in variable data from the form
             const { data } = await addUser({
-                variables: { ...formState }
+                variables: { ...formState },
             });
             Auth.login(data.addUser.token);
         } catch (e) {
@@ -37,7 +38,7 @@ const Signup = () => {
     return (
         <main className=''>
             <div className='my-4 mx-2'>
-                    <h4 className='text-uppercase'>Sign-up</h4>
+                    <h4 className='text-uppercase'>Signup</h4>
                     <div className=''>
                         <form onSubmit={handleFormSubmit}>
                             <div className="form-floating mb-3">
