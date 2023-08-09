@@ -22,14 +22,14 @@ db.once('open', async () => {
 
       // this will create friends
       for (let i = 0; i < 100; i += 1) {
-        const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-        const { _id: userId } = createdUsers.ops[randomUserIndex];
+        const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+        const { _id: userId } = createdUsers[randomUserIndex];
 
         let friendId = userId;
 
         while (friendId === userId) {
-            const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-            friendId = createdUsers.ops[randomUserIndex];
+            const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+            friendId = createdUsers[randomUserIndex];
         }
 
         await User.updateOne({ _id: userId }, { $addToSet: { friends: friendId } });
@@ -44,8 +44,8 @@ db.once('open', async () => {
         const caseStartDate = faker.date.past();
         const caseStatus = "Unsolved";
 
-        const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-        const { username, _id: userId } = createdUsers.ops[randomUserIndex];
+        const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+        const { username, _id: userId } = createdUsers[randomUserIndex];
 
         const createdCase = await Case.create({ caseTitle, caseSummary, caseDescription, caseStartDate, caseStatus, username });
 
@@ -62,7 +62,7 @@ db.once('open', async () => {
         const commentText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-        const { username } = createdUsers.ops[randomUserIndex];
+        const { username } = createdUsers[randomUserIndex];
 
         const randomCaseIndex = Math.floor(Math.random() * createdCases.length);
         const { _id: caseId } = createdCases[randomCaseIndex];
