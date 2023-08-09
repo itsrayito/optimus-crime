@@ -42,4 +42,4 @@ Any questions, comments, concerns, disagreemnets, feel free to reach out to me t
 This application was made possible by class lectures provided to us by Rice University in partnership with edX, YouTube tutorial videos, StackOverflow for debugging & other issues, & google to search up error codes and fails.
 
 # Live-Site
-https://pacific-chamber-86935-a5798209b051.herokuapp.com/
+https://agile-waters-17466-f695877a63f2.herokuapp.com/
